@@ -1,12 +1,5 @@
 terraform {
   
-provider "azurerm" {
-  features {}
-  client_id = var.client_id
-  client_secret = var.client_secret
-  tenant_id = var.tenant_id
-  subscription_id = var.subscription_id
-  }
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -21,7 +14,13 @@ provider "azurerm" {
     }
   }
 }
-
+provider "azurerm" {
+  features {}
+  client_id = var.client_id
+  client_secret = var.client_secret
+  tenant_id = var.tenant_id
+  subscription_id = var.subscription_id
+  }
 
 data "azurerm_resource_group" "rg" {
   name = "ramon-pizana"
